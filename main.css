@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.sheet-music-results {
+    border: 1px solid black;
+}
+
+.video-info {
+    list-style-type: none;
+}
+
+.video-results {
+    display: flex;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
