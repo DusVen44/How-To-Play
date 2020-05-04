@@ -5,7 +5,7 @@ console.log("Hey");
 //function to get Songsterr Json Data
 function getSongsterrJsonData() {
     let searchInput = $("#artist-song").val();
-    fetch("http://www.songsterr.com/a/ra/songs.json?pattern="+searchInput)
+    fetch("https://www.songsterr.com/a/ra/songs.json?pattern="+searchInput)
     .then(response => response.json())
     .then(responseJson => displaySongsterrResults(responseJson))
     .catch(err => alert("WHOA! Something went wrong"));
