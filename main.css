@@ -19,7 +19,7 @@ body {
 .guitar-purple {
     position: fixed;
     z-index: -1;
-    height: 90vh;
+    height: 80vh;
     right: 0;
     left: 0;
     bottom: 2%;
