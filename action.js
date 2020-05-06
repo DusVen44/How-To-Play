@@ -14,11 +14,11 @@ function getSongsterrJsonData() {
 //function to display the search results for Songsterr
 function displaySongsterrResults(responseJson) {
     console.log(responseJson);
-    $(".sheet-music").append(`<h1>Sheet Music</h1>`);
     for (let i=0; i<responseJson.length; i++) {
-       $(".sheet-music").append(`<section class="sheet-music-results">
-                                 <p>${responseJson[i].artist.name} - ${responseJson[i].title}</p>
-                                 <p><a href="https://www.songsterr.com/a/wa/song?id=${responseJson[i].id}" target="_blank">View Sheet Music</a><p>
+       $(".sheet-music-results-container").append(`<section class="sheet-music-results">
+                                 <p>Artist: ${responseJson[i].artist.name}<br>
+                                    Song: ${responseJson[i].title}</p>
+                                 <p><a href="https://www.songsterr.com/a/wa/song?id=${responseJson[i].id}" target="_blank" class="music-link">View Sheet Music</a><p>
                                  </section>`)
     };
 }
@@ -39,13 +39,13 @@ function getYoutubeJsonData() {
 //function to display the search results for YouTube
 function displayYoutubeResults(responseJson) {
     console.log(responseJson);
-    $(".videos").append(`<h1>Videos</h1>`);
     for (let i=0; i<responseJson.items.length; i++) {
-        $(".videos").append(`<section class="video-results">
+        $(".videos-container").append(`<section class="video-results">
                              <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"></a></div>
                              <ul class="video-info">
                                  <li><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank">${responseJson.items[i].snippet.title}</a></li>
                                  <li>${responseJson.items[i].snippet.channelTitle}</li>
+                             </ul>
                              </section>`)
     };
 }
@@ -54,8 +54,9 @@ function displayYoutubeResults(responseJson) {
 function searchButton() {
     $("form").submit(event => {
         event.preventDefault();
-        $(".sheet-music").empty();
-        $(".videos").empty();
+        $("link[href='main.css']").attr('href', 'blue-theme.css');
+        $(".sheet-music-results-container").empty();
+        $(".videos-container").empty();
         getSongsterrJsonData();
         getYoutubeJsonData();
     })
