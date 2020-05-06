@@ -33,7 +33,7 @@ function getYoutubeJsonData() {
     fetch(baseURL)
     .then(response => response.json())
     .then(responseJson => displayYoutubeResults(responseJson))
-    .catch(err => alert("YouTube went down"));
+    .catch(err => alert("Reached YouTube Quota Limit - Site Administrator is requesting increase. Please try again later."));
 }
 
 //function to display the search results for YouTube
