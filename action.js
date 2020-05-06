@@ -24,44 +24,49 @@ function displaySongsterrResults(responseJson) {
 }
 
 //function to get YouTube Json Data
-function getYoutubeJsonData() {
-    let searchInput = $("#artist-song").val();
-    let properInput = searchInput.replace(" ", /%20/);
-    let instrument = $("#instrument").val();
-    const api = 'AIzaSyCwmIHLLbhnmo7oEWksps3ew8DmKr5rHfw';
-    const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&type=video&maxResults=3&key=' + api;
-    fetch(baseURL)
-    .then(response => response.json())
-    .then(responseJson => displayYoutubeResults(responseJson))
-    .catch(err => alert("Reached YouTube Quota Limit - Site Administrator is requesting increase. Please try again later."));
-}
+// function getYoutubeJsonData() {
+//     let searchInput = $("#artist-song").val();
+//     let properInput = searchInput.replace(" ", /%20/);
+//     let instrument = $("#instrument").val();
+//     const api = 'AIzaSyCwmIHLLbhnmo7oEWksps3ew8DmKr5rHfw';
+//     const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&type=video&maxResults=3&key=' + api;
+//     fetch(baseURL)
+//     .then(response => response.json())
+//     .then(responseJson => displayYoutubeResults(responseJson))
+//     .catch(err => alert("Reached YouTube Quota Limit - Site Administrator is requesting increase. Please try again later."));
+// }
 
 //function to display the search results for YouTube
-function displayYoutubeResults(responseJson) {
-    console.log(responseJson);
-    for (let i=0; i<responseJson.items.length; i++) {
-        $(".videos-container").append(`<section class="video-results">
-                             <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"></a></div>
-                             <ul class="video-info">
-                                 <li><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank">${responseJson.items[i].snippet.title}</a></li>
-                                 <li>${responseJson.items[i].snippet.channelTitle}</li>
-                             </ul>
-                             </section>`)
-    };
-}
+// function displayYoutubeResults(responseJson) {
+//     console.log(responseJson);
+//     for (let i=0; i<responseJson.items.length; i++) {
+//         $(".videos-container").append(`<section class="video-results">
+//                              <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"></a></div>
+//                              <ul class="video-info">
+//                                  <li><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank">${responseJson.items[i].snippet.title}</a></li>
+//                                  <li>${responseJson.items[i].snippet.channelTitle}</li>
+//                              </ul>
+//                              </section>`)
+//     };
+// }
 
 //function to make Search button functional
 function searchButton() {
     $("form").submit(event => {
         event.preventDefault();
-        $("link[href='main.css']").attr('href', 'blue-theme.css');
+        let themes = ["main.css", "blue-theme.css", "red-theme.css", "green-theme.css"];
+        let randomTheme = themes[Math.floor(Math.random() * themes.length)];
+        $("link[href='main.css']").attr('href', randomTheme);
+        $("link[href='blue-theme.css']").attr('href', randomTheme);
+        $("link[href='red-theme.css']").attr('href', randomTheme);
+        $("link[href='green-theme.css']").attr('href', randomTheme);
         $(".sheet-music-results-container").empty();
         $(".videos-container").empty();
         getSongsterrJsonData();
-        getYoutubeJsonData();
+        // getYoutubeJsonData();
     })
 }
 
 getSongsterrJsonData();
-getYoutubeJsonData();
+// getYoutubeJsonData();
 searchButton();

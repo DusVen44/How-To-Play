@@ -5,15 +5,14 @@
     z-index: 1;
 }
 
-.guitar-blue, .guitar-purple {
+.guitar-blue, .guitar-purple, .drums-green {
     display: none;
 }
 
 body {
     margin: 0;
     position: relative;
-    background: linear-gradient(0deg, rgba(140,0,0,1) 0%, rgb(54, 0, 0) 20%);
-    background-size: 100vh;
+    background: linear-gradient(0deg, rgba(140,0,0,1) 0%, rgb(54, 0, 0) 20%) fixed;
 }
 
 .drums-red {
