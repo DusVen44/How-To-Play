@@ -16,58 +16,60 @@
 <body>
 
 <!--Below are the background images for the different themes-->    
-   <div>
-   <img src="images/purple-guitar1.png" class="guitar-purple">
-   <img src="images/blue-guitar1.png" class="guitar-blue">
-   <img src="images/drums-red1.png" class="drums-red">
-   <img src="images/guitar-neck.png" class="guitar-neck">
-   </div>
+    <div>
+        <img src="images/purple-guitar1.png" class="guitar-purple">
+        <img src="images/blue-guitar1.png" class="guitar-blue">
+        <img src="images/drums-red1.png" class="drums-red">
+        <img src="images/guitar-neck.png" class="guitar-neck">
+    </div>
 
-   <main>
-   <header>
-       <img src="images/title-1.png" class="title">
-       <h1 class="title2">How to Play</h1>
-   </header>
+    <main>
+    <header>
+        <img src="images/title-1.png" class="title">
+        <h1 class="title2">How to Play</h1>
+    </header>
 
-   <section class="intro-container">
-      <h2>Welcome to How to Play! Here's how it works...</h2><br> 
-       <p class="intro">Type in an artist and/or a song, select your instrument, and hit that search button. 
-                        The first set of results will be links to the sheet music of what you searched for. The second set of results will be links to 
-                        YouTube videos that show how to play the songs on the instrument selected. An example is shown below.
-      </p>
-   </section>
+    <section class="intro-container">
+        <h2>Welcome to How to Play! Here's how it works...</h2><br> 
+        <p class="intro">Type in an artist and/or a song, select your instrument, and hit that search button. 
+                         The first set of results will be links to the sheet music of what you searched for. The second set of results will be links to 
+                         YouTube videos that show how to play the songs on the instrument selected. An example is shown below.
+        </p>
+    </section>
 
-   <form>
-       <label for="artist-song">Artist and/or Song:</label>
-       <input type="text" name="artitst-song" id="artist-song" value="Candlebox Far Behind"><br>
-       <label for="instrument">Instrument:</label>
-       <select name="instrument" id="instrument">
-           <option value="guitar" class="option">Guitar</option>
-           <option value="bass" class="option">Bass</option>
-           <option value="drums" class="option">Drums</option>
-       </select><br>
-       <input type="submit" value="Search" class="button">
-   </form>
+    <form>
+        <label for="artist-song">Artist and/or Song:</label>
+        <input type="text" name="artitst-song" id="artist-song" value="Candlebox Far Behind"><br>
+        
+        <label for="instrument">Instrument:</label>
+        <select name="instrument" id="instrument">
+            <option value="guitar" class="option">Guitar</option>
+            <option value="bass" class="option">Bass</option>
+            <option value="drums" class="option">Drums</option>
+        </select><br>
+        
+        <input type="submit" value="Search" class="button">
+    </form>
 
-   <section class="results">
-       <section class="sheet-music">
-           <h1>Sheet Music</h1>
-           <div class="sheet-music-results-container">
-           </div>    
-       </section>
+    <section class="results">
+        <section class="sheet-music">
+            <h1>Sheet Music</h1>
+                <div class="sheet-music-results-container">
+            </div>    
+        </section>
 
-       <section class="videos">
-           <h1>Video Tutorials</h1>
-           <div class="videos-container">
-            
-           </div>
-       </section>
-   </section>
-   </main>
+        <section class="videos">
+            <h1>Video Tutorials</h1>
+            <div class="videos-container">
+            </div>
+        </section>
+    </section>
+    </main>
     
     <script src="https://code.jquery.com/jquery-3.5.0.js" 
     integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
     crossorigin="anonymous"></script>
     <script src="action.js"></script>
+
 </body>
 </html>
