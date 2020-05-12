@@ -127,11 +127,28 @@ h1 {
     padding-right: 20px;
 }
 
-.music-link {
+.link {
     color: yellow;
 }
 
-.video-info {
+.lyrics-results {
+    font-size: 16px;
+    border: 1px solid rgb(255, 0, 255);
+    border-radius: 20px;
+    box-shadow: 0px 0px 9px 2px rgb(255, 0, 255);
+    background-color: rgba(37, 0, 39, 0.733);
+    width: fit-content;
+    margin-left: 5%;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lyrics-image {
+    width: 100px;
+}
+
+/* .video-info {
     list-style-type: none;
 }
 
@@ -150,7 +167,7 @@ h1 {
 
 .video-info {
     font-size: 16px;
-}
+} */
 
 .title2 {
     display: none;
@@ -238,7 +255,7 @@ h1 {
 
     .results {
         width: 95%;
-        max-width: 900px;
+        max-width: 700px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -257,7 +274,15 @@ h1 {
         font-size: 20px;
     }
 
-    .video-results {
+    .lyrics-results {
+        width: 90%;
+        min-width: 250px;
+        max-width: 425px;
+        font-size: 20px;
+        margin-left: 80px;
+    }
+
+    /* .video-results {
         align-items: center;
         width: 100%;
         max-width: 425px;
@@ -265,6 +290,6 @@ h1 {
     
     .video-info {
         font-size: 20px;
-    }
+    } */
 
 }

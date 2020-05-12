@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Play</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.css" id="style">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -32,22 +32,23 @@
 
     <section class="intro-container">
         <h2>Welcome to How to Play! Here's how it works...</h2><br> 
-        <p class="intro">Type in an artist and/or a song, select your instrument, and hit that search button. 
-                         The first set of results will be links to the sheet music of what you searched for. The second set of results will be links to 
-                         YouTube videos that show how to play the songs on the instrument selected. An example is shown below.
+        <p class="intro">Type in an artist and/or a song and hit that search button. 
+                         The first set of results will be links to the sheet music of what you searched for. 
+                         The second set of results will provide the lyrics to the song or songs related to your search.
+                         An example is shown below.
         </p>
     </section>
 
     <form>
         <label for="artist-song">Artist and/or Song:</label>
-        <input type="text" name="artitst-song" id="artist-song" value="Candlebox Far Behind" required><br>
+        <input type="text" name="artitst-song" id="artist-song" value="Pearl Jam Alive" required><br>
         
-        <label for="instrument">Instrument:</label>
+        <!-- <label for="instrument">Instrument:</label>
         <select name="instrument" id="instrument">
             <option value="guitar" class="option">Guitar</option>
             <option value="bass" class="option">Bass</option>
             <option value="drums" class="option">Drums</option>
-        </select><br>
+        </select><br> -->
         
         <input type="submit" value="Search" class="button">
     </form>
@@ -59,9 +60,9 @@
             </div>    
         </section>
 
-        <section class="videos">
-            <h1>Video Tutorials</h1>
-            <div class="videos-container">
+        <section class="lyrics">
+            <h1>Lyrics</h1>
+            <div class="lyrics-container">
             </div>
         </section>
     </section>
