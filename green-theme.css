@@ -148,7 +148,7 @@ h1 {
     width: 100px;
 }
 
-/* .video-info {
+.video-info {
     list-style-type: none;
 }
 
@@ -167,7 +167,7 @@ h1 {
 
 .video-info {
     font-size: 16px;
-} */
+}
 
 .title2 {
     display: none;
@@ -254,8 +254,9 @@ h1 {
     }
 
     .results {
-        width: 95%;
-        max-width: 700px;
+        width: 100%;
+        padding: 10px;
+        max-width: 1080px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -268,28 +269,33 @@ h1 {
     }
 
     .sheet-music-results {
-        width: 90%;
-        min-width: 250px;
+        width: 30%;
+        min-width: 200px;
         max-width: 425px;
         font-size: 20px;
+    }
+
+    .lyrics-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .lyrics-results {
-        width: 90%;
-        min-width: 250px;
+        width: 30%;
+        min-width: 200px;
         max-width: 425px;
         font-size: 20px;
-        margin-left: 80px;
     }
 
-    /* .video-results {
+    .video-results {
         align-items: center;
-        width: 100%;
+        width: fit-content;
         max-width: 425px;
     }
     
     .video-info {
         font-size: 20px;
-    } */
+    }
 
 }

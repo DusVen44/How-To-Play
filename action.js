@@ -6,7 +6,7 @@ function getSongsterrJsonData() {
     fetch("https://www.songsterr.com/a/ra/songs.json?pattern="+searchInput)
     .then(response => response.json())
     .then(responseJson => displaySongsterrResults(responseJson))
-    .catch(err => alert("WHOA! Something went wrong"));
+    .catch(err => alert("WHOA! Something went wrong", err));
 }
 
 //function to display the search results for Songsterr
@@ -32,7 +32,7 @@ function getLyricsJsonData() {
     fetch(baseURL)
         .then(response => response.json())
         .then(responseJson => displayLyrics(responseJson))
-        .catch(error => alert("Whoa! Something went wrong! Please contact site administrator."));
+        .catch(error => alert("Whoa! Something went wrong! Please contact site administrator.", error));
 }
 
 //function to display Lyrics Results
@@ -49,31 +49,30 @@ function displayLyrics(responseJson) {
 }
 
 //function to get YouTube Json Data
-// function getYoutubeJsonData() {
-//     let searchInput = $("#artist-song").val();
-//     let properInput = searchInput.replace(" ", /%20/);
-//     let instrument = $("#instrument").val();
-//     const api = 'AIzaSyCDSarObwOZUGCY0KZavF_EX6rrlpB_kXA';
-//     const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&id.videoId&snippet.title&snippet.channelTitle&snippet.title&snippet.thumbnails.default.url&type=video&maxResults=2&key=' + api;
-//     fetch(baseURL)
-//     .then(response => response.json())
-//     .then(responseJson => displayYoutubeResults(responseJson))
-//     .catch(err => alert("Reached YouTube Quota Limit - Site Administrator is requesting increase. Please try again later."));
-// }
+function getYoutubeJsonData() {
+    let searchInput = $("#artist-song").val();
+    let properInput = searchInput.replace(" ", /%20/);
+    let instrument = $("#instrument").val();
+    const api = 'AIzaSyCDSarObwOZUGCY0KZavF_EX6rrlpB_kXA';
+    const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&id.videoId&snippet.title&snippet.channelTitle&snippet.title&snippet.thumbnails.default.url&type=video&maxResults=2&key=' + api;
+    fetch(baseURL)
+    .then(response => response.json())
+    .then(responseJson => displayYoutubeResults(responseJson))
+    .catch(err => alert("Reached YouTube Quota Limit - Site Administrator is requesting increase. Please try again later.", err));
+}
 
 //function to display the search results for YouTube
-// function displayYoutubeResults(responseJson) {
-//     console.log(responseJson);
-//     for (let i=0; i<responseJson.items.length; i++) {
-//         $(".videos-container").append(`<section class="video-results">
-//                              <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"></a></div>
-//                              <ul class="video-info">
-//                                  <li><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank">${responseJson.items[i].snippet.title}</a></li>
-//                                  <li>${responseJson.items[i].snippet.channelTitle}</li>
-//                              </ul>
-//                              </section>`)
-//     };
-// }
+function displayYoutubeResults(responseJson) {
+    for (let i=0; i<responseJson.items.length; i++) {
+        $(".videos-container").append(`<section class="video-results">
+                             <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"></a></div>
+                             <ul class="video-info">
+                                 <li><a href="https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank">${responseJson.items[i].snippet.title}</a></li>
+                                 <li>${responseJson.items[i].snippet.channelTitle}</li>
+                             </ul>
+                             </section>`)
+    };
+}
 
 //function to make Search button functional
 function searchButton() {
@@ -84,14 +83,15 @@ function searchButton() {
         $("#style").attr('href', randomTheme);
         $(".sheet-music-results-container").empty();
         $(".lyrics-container").empty();
-        // $(".videos-container").empty();
+        $(".videos-container").empty();
         getSongsterrJsonData();
         getLyricsJsonData();
-        // getYoutubeJsonData();
+        getYoutubeJsonData();
     })
 }
 
+//Call all non-called functions
 getSongsterrJsonData();
 getLyricsJsonData();
-// getYoutubeJsonData();
+getYoutubeJsonData();
 searchButton();
