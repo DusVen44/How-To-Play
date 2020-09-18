@@ -11,7 +11,6 @@ function getSongsterrJsonData() {
 
 //function to display the search results for Songsterr
 function displaySongsterrResults(responseJson) {
-    console.log(responseJson);
     for (let i=0; i<responseJson.length; i++) {
        $(".sheet-music-results-container").append(`<section class="sheet-music-results">
                                  <p>Artist: ${responseJson[i].artist.name}<br>
@@ -37,7 +36,7 @@ function getLyricsJsonData() {
 
 //function to display Lyrics Results
 function displayLyrics(responseJson) {
-    console.log(responseJson);
+    // console.log(responseJson);
     for (let i=0; i<responseJson.response.hits.length; i++) {
         $(".lyrics-container").append(`<section class="lyrics-results">
                                        <p>Artist: ${responseJson.response.hits[i].result.primary_artist.name}</br>
