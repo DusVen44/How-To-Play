@@ -52,7 +52,8 @@ function getYoutubeJsonData() {
     let searchInput = $("#artist-song").val();
     let properInput = searchInput.replace(" ", /%20/);
     let instrument = $("#instrument").val();
-    const api = 'AIzaSyCDSarObwOZUGCY0KZavF_EX6rrlpB_kXA';
+    const api = YOUTUBE_API;
+    console.log(api);
     const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&id.videoId&snippet.title&snippet.channelTitle&snippet.title&snippet.thumbnails.default.url&type=video&maxResults=2&key=' + api;
     fetch(baseURL)
     .then(response => response.json())
