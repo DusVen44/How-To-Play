@@ -26,7 +26,7 @@ function getLyricsJsonData() {
     let token = "hnDCED9RpM3J1twbO3B0J8NvgNuplgT2dwkUXOgD_6c-Cf40AHjkrPlvZwQLQhSD";
     let searchInput = $("#artist-song").val();
     let properInput = searchInput.replace(" ", /%20/);
-    let baseURL = 'https://api.genius.com/search?q=' + properInput + '&access_token=' + token;
+    let baseURL = 'https://api.genius.com/search?q=' + properInput + '&access_token=' + token + 'per_page=2';
     
     fetch(baseURL)
         .then(response => response.json())
