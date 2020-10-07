@@ -55,7 +55,7 @@ function getYoutubeJsonData() {
     const api = "AIzaSyCSH-Rhpy4xWnIZfHxUvVP2LOO4JlsfNwE";
     const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&id.videoId&snippet.title&snippet.channelTitle&snippet.title&snippet.thumbnails.default.url&type=video&maxResults=2&key=' + api;
     fetch(baseURL, {
-        referrerPolicy: 'https://dusven44.github.io/How-To-Play/'
+        referrerPolicy: "origin"
     })
     .then(response => response.json())
     .then(responseJson => displayYoutubeResults(responseJson))
