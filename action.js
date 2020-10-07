@@ -54,10 +54,12 @@ function getYoutubeJsonData() {
     let instrument = $("#instrument").val();
     const api = "AIzaSyCSH-Rhpy4xWnIZfHxUvVP2LOO4JlsfNwE";
     const baseURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=how%20to%20play%20' + properInput + '%20' + instrument + '&id.videoId&snippet.title&snippet.channelTitle&snippet.title&snippet.thumbnails.default.url&type=video&maxResults=2&key=' + api;
-    fetch(baseURL)
+    fetch(baseURL, {
+        referrerPolicy: 'https://dusven44.github.io/How-To-Play/'
+    })
     .then(response => response.json())
     .then(responseJson => displayYoutubeResults(responseJson))
-    .catch(err => alert("YouTube's API is acting up again. Site Administrator is dealing with it.", err));
+    .catch(err => alert("YouTube's API is acting up again. Site Administrator is dealing with it.", console.log(err)));
 }
 
 //function to display the search results for YouTube
